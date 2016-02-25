@@ -1,0 +1,14 @@
+
+.carddemoBasicUsage .card-media {
+  background-color: #999999;
+  height: 100px;
+}
+
+.beer-card {
+	height: 250px;
+	width: 500px;
+}
+
+.beer-info {
+	padding-left: 20px;
+}
