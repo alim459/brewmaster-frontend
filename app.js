@@ -115,4 +115,18 @@ function DialogController($scope, $mdDialog) {
   	$scope.answer = function(answer) {
     	$mdDialog.hide(answer);
   	};
+
+  	if (mockMode){
+  		$scope.vendors = [
+			{
+				"name":"Darby's Liquor Store"
+			},
+			{
+				"name":"UBC Liquor Store"
+			}
+		];
+  	} else {
+  		//get the vendors here
+  	}
+
 }
