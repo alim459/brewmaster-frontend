@@ -116,6 +116,7 @@ function DialogController($scope, $mdDialog) {
     	$mdDialog.hide(answer);
   	};
 
+
   	if (mockMode){
   		$scope.vendors = [
 			{
