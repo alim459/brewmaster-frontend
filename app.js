@@ -41,23 +41,54 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
   		//not mockmode beers
   	}
 
-  	$scope.showVendors = function(beer) {
+  	$scope.showVendors = function(ev, beer) {
     // Appending dialog to document.body to cover sidenav in docs app
     // Modal dialogs should fully cover application
     // to prevent interaction outside of dialog
-    	console.log('button clicked!');
-	  //   $mdDialog.show(
-			// $mdDialog.alert()
-			// .parent(angular.element(document.querySelector('#popupContainer')))
-			// .clickOutsideToClose(true)
-			// .title('Showing vendors for ' + beer.name);
-			// .textContent('You can specify some description text in here.')
-			// .ariaLabel('Alert Dialog Demo')
-			// .ok('Got it!')
-			// .targetEvent(ev)
-	  //   );
+	    $mdDialog.show(
+			$mdDialog.alert()
+			.parent(angular.element(document.querySelector('#popupContainer')))
+			.clickOutsideToClose(true)
+			.title('Showing vendors for ' + beer.name)
+			.textContent('You can specify some description text in here.')
+			.ariaLabel('Alert Dialog Demo')
+			.ok('Got it!')
+			.targetEvent(ev)
+	    );
 
-		console.log("clicked on a beer's vendors" + beer.name);
+		// console.log("clicked on a beer's vendors" + beer.name);
+  	};
+
+  	$scope.showRatings = function(ev, beer) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    	if (mockMode) {
+    		vendors = [
+    			{
+    				"name":"Darby's Liquor Store"
+    			},
+    			{
+    				"name":"UBC Liquor Store"
+    			}
+			];
+    	} else {
+    		//call fill in the vendor array with stuff here
+    	}
+
+
+	    $mdDialog.show(
+			$mdDialog.alert()
+			.parent(angular.element(document.querySelector('#popupContainer')))
+			.clickOutsideToClose(true)
+			.title('Showing ratings for ' + beer.name)
+			.textContent('You can specify some description text in here.')
+			.ariaLabel('Alert Dialog Demo')
+			.ok('Got it!')
+			.targetEvent(ev)
+	    );
+
+		// console.log("clicked on a beer's vendors" + beer.name);
   	};
 
 });
