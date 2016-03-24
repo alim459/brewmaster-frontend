@@ -105,6 +105,19 @@ app.controller('AppCtrl', function($scope, $mdDialog, $mdMedia) {
 
 });
 
+app.controller('SearchCtrl', function($scope) {
+    $scope.beer = {};
+    $scope.beerTypeCategories = ["IPA", "Pilsner", "Porter", "Stout", "Lager"
+    ];
+    $scope.abvCategories = ["<4%", "4-4.99%", "5-5.99%", "6-6.99%", ">7%" ];
+    $scope.ibuCategories = ["<10", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", ">70"];
+    $scope.ratingCategories = [">1 Star", ">2 Stars", ">3 Stars", ">4 Stars"];
+
+  });
+
+
+
+
 function DialogController($scope, $mdDialog) {
   	$scope.hide = function() {
     	$mdDialog.hide();
