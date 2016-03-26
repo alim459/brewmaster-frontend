@@ -10,6 +10,26 @@
 
 <body ng-app="Brewmaster" ng-cloak>
   <div ng-controller="AppCtrl" ng-cloak >
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Brewmeister</span>
+        </h2>
+        <span flex></span>
+        <md-button id="login-signup" ng-click="submitSearch($event)">
+          Login/Signup
+        </md-button>
+        <md-button id="bwose" ng-click="submitSearch($event)">
+          Browse
+        </md-button>
+        <md-button id="contact" ng-click="submitSearch($event)">
+          Contact
+        </md-button>
+      </div>
+    </md-toolbar>
     <!-- Top banner -->
     <div class="jumbotron vertical-center">
       <div id="jumbotron-text" class="container">
@@ -19,7 +39,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="container">
       <md-subhead id="recommendations">Our Recommendations:</md-subhead>
       <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="row">
