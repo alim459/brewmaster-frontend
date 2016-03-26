@@ -1,5 +1,10 @@
 var mockMode = true;
+var debugMode = false;
 var app = angular.module('Brewmaster', ['ngMaterial']);
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue-grey');
+});
 
 app.controller('AppCtrl', function($scope, $mdDialog, $mdMedia) {
 	if (mockMode) {
@@ -112,6 +117,20 @@ app.controller('SearchCtrl', function($scope) {
     $scope.abvCategories = ["<4%", "4-4.99%", "5-5.99%", "6-6.99%", ">7%" ];
     $scope.ibuCategories = ["<10", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", ">70"];
     $scope.ratingCategories = [">1 Star", ">2 Stars", ">3 Stars", ">4 Stars"];
+    $scope.isBeerEmpty = jQuery.isEmptyObject($scope.beer);
+
+
+
+    $scope.submitSearch = function(ev){
+    	// console.log("Search submitted!");
+    	// console.log("Submitting a search of: " + $scope.beer);
+    	console.log("There are "+Object.keys($scope.beer).length+" attributes in beer");
+    	if (jQuery.isEmptyObject($scope.beer)){
+    		console.log('invalid search');
+    	} else {
+    		console.log('good search');
+    	}
+    }
 
   });
 

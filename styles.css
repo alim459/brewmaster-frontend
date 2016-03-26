@@ -36,6 +36,22 @@
     top:20%;
  }*/
 
+ #recommendations{
+ 	font-size: 20;
+ }
+
+ #search-form{
+ 	opacity:0.9;
+ }
+
+ #search-area{
+ 	background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/craft-beer.jpg');
+ 	background-size: cover;
+ 	height:100%;
+ 	padding-top: 100px;
+
+ }
+
  .jumbotron{
  	background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/banner.jpg');
  	background-size:cover;
@@ -43,12 +59,13 @@
  	text-align: center;
  }
  .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  /*min-height: 100%;   Fallback for browsers do NOT support vh unit */
+  /*min-height: 100vh;  These two lines are counted as one :-)       */
 
   display: flex;
   align-items: center;
   padding-top: 0px;
+  height: 500px;
 }
 
 .jumbotron md-title {
