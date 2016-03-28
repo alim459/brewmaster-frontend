@@ -35,6 +35,19 @@
     margin-bottom: 0;
     top:20%;
  }*/
+#author{
+	padding-top: 30px;
+}
+
+.quote-area{
+	background-color: black;
+	color: #FFFFFF;
+	height:70vh;
+}
+
+ #contact{
+ 	margin-right: 20px;
+ }
 
  #recommendations{
  	font-size: 20;
@@ -53,19 +66,17 @@
  }
 
  .jumbotron{
- 	background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/banner.jpg');
  	background-size:cover;
- 	height:100vh;
+ 	height:70;
  	text-align: center;
  }
  .vertical-center {
-  /*min-height: 100%;   Fallback for browsers do NOT support vh unit */
-  /*min-height: 100vh;  These two lines are counted as one :-)       */
-
+  background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/banner.jpg');
   display: flex;
   align-items: center;
   padding-top: 0px;
   height: 500px;
+  margin-bottom: 0;
 }
 
 .jumbotron md-title {
@@ -117,5 +128,15 @@
 
 .beer-image{
 	height:173px;
+}
+
+.quote-area{
+	background-color:rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    padding-top: 0px;
+    height: 500px;
+    margin-bottom: 0;
+
 }
 

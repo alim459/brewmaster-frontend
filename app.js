@@ -6,7 +6,7 @@ app.config(function($mdThemingProvider) {
     .primaryPalette('blue-grey');
 });
 
-app.controller('AppCtrl', function($scope, $mdDialog, $mdMedia) {
+app.controller('AppCtrl', function($scope, $mdDialog, $mdMedia, $rootScope) {
 	if (mockMode) {
 		$scope.beers = [
 		 	{
@@ -47,6 +47,22 @@ app.controller('AppCtrl', function($scope, $mdDialog, $mdMedia) {
   	}
 
   	$scope.showVendors = function(ev, beer) {
+  		if (mockMode){
+  			$rootScope.vendors = [
+				{
+					"name":"Darby's Liquor Store"
+				},
+				{
+					"name":"UBC Liquor Store"
+				},
+				{	
+					"name":"Legacy Liquor Store"
+				}
+			];
+  		} else {
+  			//!!! implement this when webserver works
+  		}
+  		// console.log(JSON.stringify($rootScope.vendors));
 	    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
 	    $mdDialog.show({
 	        controller: DialogController,
@@ -77,22 +93,6 @@ app.controller('AppCtrl', function($scope, $mdDialog, $mdMedia) {
   // 	};
 
   	$scope.showRatings = function(ev, beer) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    // Modal dialogs should fully cover application
-    // to prevent interaction outside of dialog
-    	if (mockMode) {
-    		vendors = [
-    			{
-    				"name":"Darby's Liquor Store"
-    			},
-    			{
-    				"name":"UBC Liquor Store"
-    			}
-			];
-    	} else {
-    		//call fill in the vendor array with stuff here
-    	}
-
 
 	    $mdDialog.show(
 			$mdDialog.alert()
@@ -137,7 +137,7 @@ app.controller('SearchCtrl', function($scope) {
 
 
 
-function DialogController($scope, $mdDialog) {
+function DialogController($scope, $mdDialog, $rootScope) {
   	$scope.hide = function() {
     	$mdDialog.hide();
   	};
@@ -146,20 +146,25 @@ function DialogController($scope, $mdDialog) {
   	};
   	$scope.answer = function(answer) {
     	$mdDialog.hide(answer);
-  	};
-
-
-  	if (mockMode){
-  		$scope.vendors = [
-			{
-				"name":"Darby's Liquor Store"
-			},
-			{
-				"name":"UBC Liquor Store"
-			}
-		];
-  	} else {
-  		//get the vendors here
   	}
-
+  	console.log('got to dialogcontroller');
+  	$scope.vendors = $rootScope.vendors;
 }
+
+
+  // 	if (mockMode){
+  // 		$scope.vendors = [
+		// 	{
+		// 		"name":"Darby's Liquor Store"
+		// 	},
+		// 	{
+		// 		"name":"UBC Liquor Store"
+		// 	},
+		// 	{	
+		// 		"name":"Legacy Liquor Store"
+		// 	}
+		// ];
+  // 	} else {
+  // 		//make http get and set response to $scope.vendors
+  // 	}
+
